@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>巴黎四日小旅行</title>
+    <meta
+      name="description"
+      content="2026年5月26日至29日巴黎旅行行程，包含景点、餐厅、交通和每日安排。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="topbar" aria-label="页面导航">
+        <a href="#day-1">5/26</a>
+        <a href="#day-2">5/27</a>
+        <a href="#day-3">5/28</a>
+        <a href="#day-4">5/29</a>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy" aria-labelledby="trip-title">
+          <p class="eyebrow">Paris Pocket Trip</p>
+          <h1 id="trip-title">巴黎四日小旅行</h1>
+          <p class="subtitle">
+            住在 Puteaux / La Défense · 2026年5月26日到5月29日
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#timeline">查看行程</a>
+            <a class="button ghost" href="#essentials">关键提醒</a>
+          </div>
+        </section>
+
+        <section class="flipbook-map" aria-label="巴黎行程视觉分支地图">
+          <div class="flip-stage">
+            <div class="flip-toolbar">
+              <span>Branch Map</span>
+              <strong>Paris trip atlas</strong>
+            </div>
+            <svg class="flip-lines" viewBox="0 0 760 520" aria-hidden="true">
+              <path class="flip-link flip-link-1" d="M372 248 C292 138, 184 112, 92 94" />
+              <path class="flip-link flip-link-2" d="M392 232 C480 118, 584 102, 692 82" />
+              <path class="flip-link flip-link-3" d="M356 288 C252 334, 186 424, 94 458" />
+              <path class="flip-link flip-link-4" d="M418 286 C502 346, 584 430, 686 456" />
+            </svg>
+
+            <button type="button" class="flip-card flip-card-main" aria-label="巴黎旅程中心">
+              <span class="flip-art art-paris">
+                <i></i><i></i><i></i>
+              </span>
+              <span class="flip-meta">Puteaux Base</span>
+              <strong>Paris Pocket Trip</strong>
+            </button>
+
+            <button type="button" class="flip-card flip-card-1 active" data-map-day="1" aria-label="查看5月26日夜游">
+              <span class="flip-art art-eiffel"><i></i><i></i><i></i></span>
+              <span class="flip-meta">5/26</span>
+              <strong>铁塔河风与夜场</strong>
+              <small>游船 · Crazy Horse</small>
+            </button>
+            <button type="button" class="flip-card flip-card-2" data-map-day="2" aria-label="查看5月27日艺术线">
+              <span class="flip-art art-leftbank"><i></i><i></i><i></i></span>
+              <span class="flip-meta">5/27</span>
+              <strong>左岸艺术线</strong>
+              <small>圣母院 · 奥赛</small>
+            </button>
+            <button type="button" class="flip-card flip-card-3" data-map-day="3" aria-label="查看5月28日法网">
+              <span class="flip-art art-roland"><i></i><i></i><i></i></span>
+              <span class="flip-meta">5/28</span>
+              <strong>红土比赛日</strong>
+              <small>Roland-Garros</small>
+            </button>
+            <button type="button" class="flip-card flip-card-4" data-map-day="4" aria-label="查看5月29日返程">
+              <span class="flip-art art-louvre-scene"><i></i><i></i><i></i></span>
+              <span class="flip-meta">5/29</span>
+              <strong>卢浮宫到机场</strong>
+              <small>行李 · CDG</small>
+            </button>
+
+            <div class="flip-detail" aria-live="polite">
+              <span>当前分支</span>
+              <strong>5/26 夜游</strong>
+              <p>先把行李放回住处，再从铁塔河岸一路切到疯马秀。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <main>
+      <section class="section compact" id="essentials">
+        <div class="section-heading">
+          <p class="eyebrow">Before You Go</p>
+          <h2>关键提醒</h2>
+        </div>
+        <div class="notice-grid">
+          <article class="notice luggage">
+            <span class="notice-icon">!</span>
+            <h3>卢浮宫当天先寄存行李</h3>
+            <p>卢浮宫不允许行李箱和大包入内。5月29日建议先把行李留在酒店，或用市区正规寄存点。</p>
+          </article>
+          <article class="notice">
+            <span class="notice-icon">T</span>
+            <h3>交通以 La Défense 为枢纽</h3>
+            <p>住处靠近巴黎西侧，日常优先用 La Défense / Esplanade de La Défense 接入地铁和 RER。</p>
+          </article>
+          <article class="notice">
+            <span class="notice-icon">R</span>
+            <h3>法网当天少排额外景点</h3>
+            <p>5月28日从 11:00 开始有第二轮比赛，建议把这一天留给 Roland-Garros。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" id="food-radar">
+        <div class="section-heading">
+          <p class="eyebrow">Food Radar</p>
+          <h2>顺路餐厅备选</h2>
+        </div>
+        <div class="food-grid">
+          <article class="food-card best">
+            <span>5/29 · 卢浮宫附近</span>
+            <h3>Dong Né Chicken</h3>
+            <p>51 Rue de Richelieu，韩式炸鸡。离卢浮宫/皇宫花园一带近，适合卢浮宫后午餐。</p>
+          </article>
+          <article class="food-card best">
+            <span>5/29 · 卢浮宫/Les Halles</span>
+            <h3>machi machi</h3>
+            <p>5 Rue Chabanais 或 89 Rue Saint-Denis，奶茶甜品。卢浮宫后补糖很顺路。</p>
+          </article>
+          <article class="food-card">
+            <span>5/27 · 9区甜品</span>
+            <h3>T’Xuan 糖轩</h3>
+            <p>56 Rue La Fayette，中式茶与甜品。奥赛后如果去歌剧院/老佛爷方向，适合下午茶。</p>
+          </article>
+          <article class="food-card">
+            <span>5/27 · 9区晚餐</span>
+            <h3>Sambuja</h3>
+            <p>65 Rue du Faubourg Montmartre，韩餐。和糖轩同在 9区，可作为奥赛后晚餐方向。</p>
+          </article>
+          <article class="food-card">
+            <span>5/27 · 11区晚餐</span>
+            <h3>MELT Oberkampf</h3>
+            <p>74 Rue de la Folie Méricourt，慢熏 BBQ。适合想吃肉时特意去，离当天景点不算最近。</p>
+          </article>
+          <article class="food-card detour">
+            <span>需特意绕路 · 13区</span>
+            <h3>Dao 道餐厅</h3>
+            <p>55 Bd Saint-Marcel，川菜。位置不在主要行程线上，适合某晚专门去吃。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section-heading">
+          <p class="eyebrow">Daily Plan</p>
+          <h2>每天安排</h2>
+        </div>
+
+        <div class="days">
+          <article class="day-card" id="day-1">
+            <div class="day-date">
+              <span>5月26日</span>
+              <strong>抵达 + 塞纳河夜色</strong>
+            </div>
+            <ol class="schedule">
+              <li><time>14:25</time><span>抵达 CDG T1，入境取行李。</span></li>
+              <li><time>16:00</time><span>前往 Puteaux 住处，放行李并简单整理。</span></li>
+              <li><time>17:30</time><span>出发去埃菲尔铁塔，建议先拍照再上船。</span></li>
+              <li><time>18:30</time><span>埃菲尔铁塔附近乘塞纳河游船。</span></li>
+              <li><time>20:00</time><span>疯马秀 Crazy Horse，建议提前到场。</span></li>
+              <li><time>21:45</time><span>演出后在香榭丽舍/Marbeuf 一带晚餐或甜点。</span></li>
+            </ol>
+            <div class="info-row">
+              <div>
+                <h3>景点小抄</h3>
+                <p>埃菲尔铁塔和塞纳河游船适合作为第一眼巴黎：轻松、不费脑、照片稳定出片。</p>
+              </div>
+              <div>
+                <h3>餐厅备选</h3>
+                <p><a href="https://www.lerelaisdelentrecote.com/" target="_blank" rel="noreferrer">Le Relais de l'Entrecôte Marbeuf</a>：疯马秀附近，经典牛排薯条，热门时段可能排队。你给的餐厅这天都不算特别顺路。</p>
+              </div>
+            </div>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Crazy%20Horse%20Paris&waypoints=Eiffel%20Tower%2C%20Paris&travelmode=transit" rel="noreferrer">打开当天路线</a>
+          </article>
+
+          <article class="day-card" id="day-2">
+            <div class="day-date">
+              <span>5月27日</span>
+              <strong>圣母院 + 奥赛博物馆</strong>
+            </div>
+            <ol class="schedule">
+              <li><time>09:00</time><span>从住处出发，前往巴黎圣母院。</span></li>
+              <li><time>10:00</time><span>巴黎圣母院参观，视排队情况预留 60-90 分钟。</span></li>
+              <li><time>11:20</time><span>沿塞纳河左岸慢走，经过书店/桥景。</span></li>
+              <li><time>12:30</time><span>奥赛博物馆预约入场。</span></li>
+              <li><time>15:30</time><span>奥赛周边喝咖啡或早晚餐，按体力决定是否继续散步。</span></li>
+            </ol>
+            <div class="info-row">
+              <div>
+                <h3>景点小抄</h3>
+                <p>奥赛适合重点看印象派、后印象派和原火车站建筑。预约 12:30 很好，上午不用赶太狠。</p>
+              </div>
+              <div>
+                <h3>餐厅备选</h3>
+                <p><a href="https://lesantiquaires.net/" target="_blank" rel="noreferrer">Les Antiquaires</a>：奥赛旁边，最省路。想换口味可去 9区：糖轩下午茶，Sambuja 韩餐晚饭。</p>
+              </div>
+            </div>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Les%20Antiquaires%2C%2013%20Rue%20du%20Bac%2C%2075007%20Paris&waypoints=Notre-Dame%20de%20Paris%7CMus%C3%A9e%20d%27Orsay&travelmode=transit" rel="noreferrer">打开当天路线</a>
+          </article>
+
+          <article class="day-card" id="day-3">
+            <div class="day-date">
+              <span>5月28日</span>
+              <strong>Roland-Garros 法网日</strong>
+            </div>
+            <ol class="schedule">
+              <li><time>09:30</time><span>从住处出发，前往 Roland-Garros。</span></li>
+              <li><time>11:00</time><span>官方赛程日场开始，第二轮比赛为主。</span></li>
+              <li><time>13:00</time><span>场内午餐或球场周边简餐。</span></li>
+              <li><time>全天</time><span>按门票球场和官方 App 看比赛安排。</span></li>
+              <li><time>晚间</time><span>如果还有体力，可回 Puteaux 附近简单晚餐。</span></li>
+            </ol>
+            <div class="info-row">
+              <div>
+                <h3>景点小抄</h3>
+                <p>5月28日是单打第二轮和双打首轮，比赛密度高。带好防晒、外套和移动电源。</p>
+              </div>
+              <div>
+                <h3>餐厅备选</h3>
+                <p><a href="https://www.congres-auteuil.com/" target="_blank" rel="noreferrer">Le Congrès Auteuil</a>：Porte d'Auteuil 附近。你给的餐厅都偏市中心/东边，法网当天不建议绕。</p>
+              </div>
+            </div>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Stade%20Roland-Garros&travelmode=transit" rel="noreferrer">打开当天路线</a>
+          </article>
+
+          <article class="day-card" id="day-4">
+            <div class="day-date">
+              <span>5月29日</span>
+              <strong>卢浮宫 + 返程</strong>
+            </div>
+            <ol class="schedule">
+              <li><time>08:30</time><span>退房，行李留酒店或提前寄存。</span></li>
+              <li><time>10:30</time><span>卢浮宫预约入场。</span></li>
+              <li><time>13:30</time><span>午餐，建议选卢浮宫/皇宫花园附近。</span></li>
+              <li><time>15:00</time><span>轻松散步或购物，不要安排太远。</span></li>
+              <li><time>18:00</time><span>取行李，出发去 CDG T1。</span></li>
+              <li><time>22:05</time><span>埃及航空 MS802 起飞回开罗。</span></li>
+            </ol>
+            <div class="info-row">
+              <div>
+                <h3>景点小抄</h3>
+                <p>卢浮宫只抓重点：蒙娜丽莎、胜利女神、维纳斯、拿破仑三世套房，别试图一天看完。</p>
+              </div>
+              <div>
+                <h3>餐厅备选</h3>
+                <p>Dong Né Chicken 离卢浮宫近，适合午餐；machi machi 的 Chabanais / Saint-Denis 分店适合饭后甜品或奶茶。</p>
+              </div>
+            </div>
+            <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=Mus%C3%A9e%20du%20Louvre&destination=Paris%20Charles%20de%20Gaulle%20Airport%20Terminal%201&travelmode=transit" rel="noreferrer">打开当天路线</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div class="section-heading">
+          <p class="eyebrow">Transport</p>
+          <h2>交通路线</h2>
+        </div>
+        <div class="transport-list">
+          <article>
+            <h3>CDG → 住处</h3>
+            <p>省心：机场官方出租车或网约车直达。公共交通：RER B 进城后换乘到 La Défense / Puteaux 区域，带行李会更折腾。</p>
+          </article>
+          <article>
+            <h3>住处 → 市中心</h3>
+            <p>优先走 La Défense 或 Esplanade de La Défense 接入地铁 1 号线，再换乘到主要景点。</p>
+          </article>
+          <article>
+            <h3>住处 → 法网</h3>
+            <p>目标站点看 Porte d'Auteuil / Michel-Ange Auteuil / Boulogne Jean Jaurès，具体以当天地图 App 为准。</p>
+          </article>
+          <article>
+            <h3>市区 → CDG T1</h3>
+            <p>建议 18:00 左右就进入返程节奏。公共交通可用 RER B 到机场后换 CDGVAL；行李多则考虑出租车。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section sources">
+        <div class="section-heading">
+          <p class="eyebrow">Checked Sources</p>
+          <h2>信息来源</h2>
+        </div>
+        <ul>
+          <li><a href="https://www.louvre.fr/en/visit/hours-admission" target="_blank" rel="noreferrer">卢浮宫开放时间</a></li>
+          <li><a href="https://www.louvre.fr/en/visit/museum-rules" target="_blank" rel="noreferrer">卢浮宫参观规则</a></li>
+          <li><a href="https://www.rolandgarros.com/en-us/article/2026-full-schedule-calendar-qualifying-rounds-main-draw-singles-doubles-wheelchair-tennis" target="_blank" rel="noreferrer">Roland-Garros 2026 官方赛程</a></li>
+          <li><a href="https://www.lecrazyhorseparis.com/en/frequently-asked-questions/" target="_blank" rel="noreferrer">Crazy Horse 官方 FAQ</a></li>
+          <li><a href="https://www.musee-orsay.fr/en/visit/admission-opening-times-tickets" target="_blank" rel="noreferrer">奥赛博物馆开放和票务</a></li>
+          <li><a href="https://dao-restaurant.fr/" target="_blank" rel="noreferrer">Dao 道餐厅</a></li>
+          <li><a href="https://www.machimachi.fr/contact?lang=fr" target="_blank" rel="noreferrer">machi machi Paris</a></li>
+          <li><a href="https://www.meltslowsmokedbarbecue.com/melt-restaurant" target="_blank" rel="noreferrer">MELT 官方地址</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#top">回到顶部</a>
+      <span>Made for phone viewing · Draft v1</span>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
