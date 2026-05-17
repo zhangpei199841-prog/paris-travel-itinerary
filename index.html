@@ -21,50 +21,58 @@
 
       <div class="hero-grid">
         <section class="flipbook-map" aria-label="巴黎行程视觉分支地图">
-          <div class="flip-stage">
+          <div class="flip-stage map-image-stage">
+            <img class="overview-map-image" src="./assets/paris-overview-map.png" alt="" />
             <div class="flip-toolbar">
               <span>Branch Map</span>
               <strong>Paris trip atlas</strong>
             </div>
-            <svg class="flip-lines" viewBox="0 0 760 520" aria-hidden="true">
-              <path class="flip-link flip-link-1" d="M372 248 C292 138, 184 112, 92 94" />
-              <path class="flip-link flip-link-2" d="M392 232 C480 118, 584 102, 692 82" />
-              <path class="flip-link flip-link-3" d="M356 288 C252 334, 186 424, 94 458" />
-              <path class="flip-link flip-link-4" d="M418 286 C502 346, 584 430, 686 456" />
+
+            <svg class="route-overlay" viewBox="0 0 1000 560" role="img" aria-labelledby="route-title route-desc">
+              <title id="route-title">巴黎四日行程路线总览</title>
+              <desc id="route-desc">四条路线叠加在巴黎底图上，显示 CDG、Puteaux 民宿、埃菲尔铁塔、疯马秀、巴黎圣母院、奥赛、法网、卢浮宫和返程机场。</desc>
+              <path class="route-line route-line-1" d="M880 92 C720 120 512 120 178 198 C302 256 392 266 468 270 C510 260 560 238 612 212" />
+              <path class="route-line route-line-2" d="M178 198 C398 248 592 298 670 318 C612 334 538 342 478 336" />
+              <path class="route-line route-line-3" d="M178 198 C178 296 198 402 256 462" />
+              <path class="route-line route-line-4" d="M178 198 C350 246 512 286 576 304 C708 232 812 154 880 92" />
+
+              <g class="map-point point-cdg" transform="translate(880 92)">
+                <circle r="13" /><text x="18" y="5">CDG</text>
+              </g>
+              <g class="map-point point-base" transform="translate(178 198)">
+                <circle r="15" /><text x="20" y="5">Puteaux</text>
+              </g>
+              <g class="map-point point-eiffel" transform="translate(468 270)">
+                <circle r="13" /><text x="18" y="5">Eiffel</text>
+              </g>
+              <g class="map-point point-crazy" transform="translate(612 212)">
+                <circle r="13" /><text x="18" y="5">Crazy Horse</text>
+              </g>
+              <g class="map-point point-notre" transform="translate(670 318)">
+                <circle r="13" /><text x="18" y="5">Notre-Dame</text>
+              </g>
+              <g class="map-point point-orsay" transform="translate(478 336)">
+                <circle r="13" /><text x="18" y="5">Orsay</text>
+              </g>
+              <g class="map-point point-roland" transform="translate(256 462)">
+                <circle r="13" /><text x="18" y="5">Roland-Garros</text>
+              </g>
+              <g class="map-point point-louvre" transform="translate(576 304)">
+                <circle r="13" /><text x="18" y="5">Louvre</text>
+              </g>
+
+              <g class="day-badge badge-1" transform="translate(370 245)"><circle r="17" /><text y="6">1</text></g>
+              <g class="day-badge badge-2" transform="translate(560 330)"><circle r="17" /><text y="6">2</text></g>
+              <g class="day-badge badge-3" transform="translate(218 352)"><circle r="17" /><text y="6">3</text></g>
+              <g class="day-badge badge-4" transform="translate(696 224)"><circle r="17" /><text y="6">4</text></g>
             </svg>
 
-            <button type="button" class="flip-card flip-card-main" aria-label="巴黎旅程中心">
-              <span class="flip-art art-paris">
-                <i></i><i></i><i></i>
-              </span>
-              <span class="flip-meta">Puteaux Base</span>
-              <strong>Paris Pocket Trip</strong>
-            </button>
-
-            <button type="button" class="flip-card flip-card-1 active" data-map-day="1" aria-label="查看5月26日夜游">
-              <span class="flip-art art-eiffel"><i></i><i></i><i></i></span>
-              <span class="flip-meta">5/26</span>
-              <strong>铁塔河风与夜场</strong>
-              <small>游船 · Crazy Horse</small>
-            </button>
-            <button type="button" class="flip-card flip-card-2" data-map-day="2" aria-label="查看5月27日艺术线">
-              <span class="flip-art art-leftbank"><i></i><i></i><i></i></span>
-              <span class="flip-meta">5/27</span>
-              <strong>左岸艺术线</strong>
-              <small>圣母院 · 奥赛</small>
-            </button>
-            <button type="button" class="flip-card flip-card-3" data-map-day="3" aria-label="查看5月28日法网">
-              <span class="flip-art art-roland"><i></i><i></i><i></i></span>
-              <span class="flip-meta">5/28</span>
-              <strong>红土比赛日</strong>
-              <small>Roland-Garros</small>
-            </button>
-            <button type="button" class="flip-card flip-card-4" data-map-day="4" aria-label="查看5月29日返程">
-              <span class="flip-art art-louvre-scene"><i></i><i></i><i></i></span>
-              <span class="flip-meta">5/29</span>
-              <strong>卢浮宫到机场</strong>
-              <small>行李 · CDG</small>
-            </button>
+            <div class="map-day-controls" aria-label="选择地图路线">
+              <button type="button" class="map-day-button active" data-map-day="1">1 抵达夜游</button>
+              <button type="button" class="map-day-button" data-map-day="2">2 左岸艺术</button>
+              <button type="button" class="map-day-button" data-map-day="3">3 法网</button>
+              <button type="button" class="map-day-button" data-map-day="4">4 卢浮宫返程</button>
+            </div>
 
             <div class="flip-detail" aria-live="polite">
               <span>当前分支</span>

@@ -623,6 +623,29 @@ h3 {
   background-size: auto, auto, auto, 34px 34px, 34px 34px, auto;
 }
 
+.map-image-stage {
+  background: #101827;
+}
+
+.overview-map-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+.map-image-stage::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 24, 39, 0.08), rgba(16, 24, 39, 0.26)),
+    radial-gradient(circle at 50% 50%, transparent 0 46%, rgba(16, 24, 39, 0.2) 100%);
+  content: "";
+  pointer-events: none;
+}
+
 .flip-toolbar {
   position: absolute;
   top: 12px;
@@ -678,6 +701,102 @@ h3 {
   opacity: 1;
   stroke: #ffd76f;
   animation: route-dash 1.35s linear infinite;
+}
+
+.route-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.route-line {
+  fill: none;
+  opacity: 0.28;
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-dasharray: 9 13;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
+  filter: drop-shadow(0 2px 5px rgba(16, 24, 39, 0.35));
+}
+
+.flipbook-map[data-active-day="1"] .route-line-1,
+.flipbook-map[data-active-day="2"] .route-line-2,
+.flipbook-map[data-active-day="3"] .route-line-3,
+.flipbook-map[data-active-day="4"] .route-line-4 {
+  opacity: 1;
+  stroke: #ffd76f;
+  animation: route-dash 1.4s linear infinite;
+}
+
+.map-point {
+  opacity: 0.74;
+}
+
+.map-point circle {
+  fill: #fff;
+  stroke: #24313f;
+  stroke-width: 4;
+}
+
+.map-point text {
+  paint-order: stroke;
+  fill: #fff;
+  stroke: rgba(16, 24, 39, 0.72);
+  stroke-linejoin: round;
+  stroke-width: 5;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.point-base circle {
+  fill: #88d8b0;
+}
+
+.day-badge circle {
+  fill: #ff6f61;
+  stroke: #24313f;
+  stroke-width: 4;
+}
+
+.day-badge text {
+  fill: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.map-day-controls {
+  position: absolute;
+  right: 14px;
+  bottom: 96px;
+  left: 14px;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.map-day-button {
+  min-height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #f8fbff;
+  background: rgba(16, 24, 39, 0.64);
+  backdrop-filter: blur(12px);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.map-day-button.active {
+  border-color: #ffd76f;
+  color: #24313f;
+  background: #ffd76f;
 }
 
 .flip-card {
@@ -1588,6 +1707,20 @@ footer {
   .flip-card-4 {
     right: 12px;
     bottom: 88px;
+  }
+
+  .route-line {
+    stroke-width: 9;
+  }
+
+  .map-point text {
+    font-size: 28px;
+    stroke-width: 6;
+  }
+
+  .map-day-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    bottom: 96px;
   }
 
   .flip-detail {
