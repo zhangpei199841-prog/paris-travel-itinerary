@@ -633,15 +633,15 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.98) contrast(0.96) brightness(0.92);
+  filter: saturate(0.72) contrast(0.86) brightness(0.72);
 }
 
 .map-image-stage::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(16, 24, 39, 0.08), rgba(16, 24, 39, 0.18)),
-    radial-gradient(circle at 50% 50%, rgba(255, 249, 239, 0.12) 0 42%, rgba(16, 24, 39, 0.16) 100%);
+    linear-gradient(180deg, rgba(16, 24, 39, 0.18), rgba(16, 24, 39, 0.24)),
+    radial-gradient(circle at 50% 50%, rgba(255, 249, 239, 0.08) 0 42%, rgba(16, 24, 39, 0.24) 100%);
   content: "";
   pointer-events: none;
 }
@@ -714,11 +714,11 @@ h3 {
 
 .route-line {
   fill: none;
-  opacity: 0.96;
-  stroke-dasharray: 12 10;
+  opacity: 0.92;
+  stroke-dasharray: 14 10;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 8;
+  stroke-width: 7;
   filter:
     drop-shadow(0 2px 0 rgba(36, 49, 63, 0.75))
     drop-shadow(0 4px 9px rgba(16, 24, 39, 0.35));
@@ -747,17 +747,18 @@ h3 {
 .map-point circle {
   fill: #fff;
   stroke: #24313f;
-  stroke-width: 4;
+  stroke-width: 5;
 }
 
 .map-point text {
   paint-order: stroke;
-  fill: #fff;
-  stroke: rgba(16, 24, 39, 0.72);
+  fill: var(--ink);
+  stroke: rgba(255, 255, 255, 0.8);
   stroke-linejoin: round;
-  stroke-width: 5;
-  font-size: 25px;
+  stroke-width: 4;
+  font-size: 22px;
   font-weight: 900;
+  text-anchor: middle;
 }
 
 .point-base circle {
@@ -799,7 +800,8 @@ h3 {
   gap: 10px;
 }
 
-.legend-day {
+.legend-day,
+.legend-key {
   display: flex;
   min-height: 48px;
   align-items: center;
@@ -811,6 +813,14 @@ h3 {
   font-size: 13px;
   font-weight: 900;
   line-height: 1.25;
+}
+
+.legend-key {
+  min-height: 36px;
+  justify-content: center;
+  padding: 7px 9px;
+  background: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
 }
 
 .legend-day::before {
