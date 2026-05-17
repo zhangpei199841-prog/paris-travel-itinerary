@@ -1,7 +1,10 @@
-const navLinks = [...document.querySelectorAll(".topbar a")];
+const navLinks = [...document.querySelectorAll("[data-day-link]")];
 const mapCard = document.querySelector(".flipbook-map");
 const mapButtons = [...document.querySelectorAll("[data-map-day]")];
+const dayTabs = [...document.querySelectorAll("[data-day-tab]")];
+const dayPages = [...document.querySelectorAll("[data-day-page]")];
 const branchPreview = document.querySelector(".flip-detail");
+
 const previewCopy = {
   1: {
     title: "5/26 夜游",
@@ -20,58 +23,57 @@ const previewCopy = {
     text: "卢浮宫之后回收行李，最后接到 CDG 返程。",
   },
 };
-const dayCards = navLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
 
-function setActiveDay(day) {
+function setActiveDay(day, options = {}) {
+  const activeDay = String(day);
+
   navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#day-${day}`);
+    link.classList.toggle("active", link.dataset.dayLink === activeDay);
   });
 
   mapButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.mapDay === String(day));
+    button.classList.toggle("active", button.dataset.mapDay === activeDay);
+  });
+
+  dayTabs.forEach((tab) => {
+    const isActive = tab.dataset.dayTab === activeDay;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
+  });
+
+  dayPages.forEach((page) => {
+    const isActive = page.dataset.dayPage === activeDay;
+    page.classList.toggle("active-page", isActive);
+    page.hidden = !isActive;
   });
 
   if (mapCard) {
-    mapCard.dataset.activeDay = day;
+    mapCard.dataset.activeDay = activeDay;
   }
 
-  if (branchPreview && previewCopy[day]) {
-    branchPreview.querySelector("strong").textContent = previewCopy[day].title;
-    branchPreview.querySelector("p").textContent = previewCopy[day].text;
+  if (branchPreview && previewCopy[activeDay]) {
+    branchPreview.querySelector("strong").textContent = previewCopy[activeDay].title;
+    branchPreview.querySelector("p").textContent = previewCopy[activeDay].text;
+  }
+
+  if (options.scrollToPlan) {
+    document.querySelector("#timeline")?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 
 setActiveDay(1);
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+[...navLinks, ...mapButtons, ...dayTabs].forEach((control) => {
+  control.addEventListener("click", (event) => {
+    const day = control.dataset.dayLink || control.dataset.mapDay || control.dataset.dayTab;
+    if (!day) return;
 
-    if (!visible) return;
-
-    setActiveDay(visible.target.id.replace("day-", ""));
-  },
-  {
-    rootMargin: "-20% 0px -58% 0px",
-    threshold: [0.15, 0.35, 0.55],
-  },
-);
-
-dayCards.forEach((card) => observer.observe(card));
-
-mapButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const target = document.querySelector(`#day-${button.dataset.mapDay}`);
-    setActiveDay(button.dataset.mapDay);
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    event.preventDefault();
+    setActiveDay(day, { scrollToPlan: control.dataset.mapDay || control.dataset.dayLink });
   });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+document.querySelectorAll('a[href^="#"]:not([data-day-link])').forEach((link) => {
   link.addEventListener("click", (event) => {
     const target = document.querySelector(link.getAttribute("href"));
     if (!target) return;

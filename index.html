@@ -13,25 +13,13 @@
   <body>
     <header class="hero" id="top">
       <nav class="topbar" aria-label="页面导航">
-        <a href="#day-1">5/26</a>
-        <a href="#day-2">5/27</a>
-        <a href="#day-3">5/28</a>
-        <a href="#day-4">5/29</a>
+        <a href="#timeline" data-day-link="1">5/26</a>
+        <a href="#timeline" data-day-link="2">5/27</a>
+        <a href="#timeline" data-day-link="3">5/28</a>
+        <a href="#timeline" data-day-link="4">5/29</a>
       </nav>
 
       <div class="hero-grid">
-        <section class="hero-copy" aria-labelledby="trip-title">
-          <p class="eyebrow">Paris Pocket Trip</p>
-          <h1 id="trip-title">巴黎四日小旅行</h1>
-          <p class="subtitle">
-            住在 Puteaux / La Défense · 2026年5月26日到5月29日
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#timeline">查看行程</a>
-            <a class="button ghost" href="#essentials">关键提醒</a>
-          </div>
-        </section>
-
         <section class="flipbook-map" aria-label="巴黎行程视觉分支地图">
           <div class="flip-stage">
             <div class="flip-toolbar">
@@ -83,6 +71,18 @@
               <strong>5/26 夜游</strong>
               <p>先把行李放回住处，再从铁塔河岸一路切到疯马秀。</p>
             </div>
+          </div>
+        </section>
+
+        <section class="hero-copy" aria-labelledby="trip-title">
+          <p class="eyebrow">Paris Pocket Trip</p>
+          <h1 id="trip-title">巴黎四日小旅行</h1>
+          <p class="subtitle">
+            住在 Puteaux / La Défense · 2026年5月26日到5月29日
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#timeline">查看行程</a>
+            <a class="button ghost" href="#essentials">关键提醒</a>
           </div>
         </section>
       </div>
@@ -155,11 +155,18 @@
       <section class="section" id="timeline">
         <div class="section-heading">
           <p class="eyebrow">Daily Plan</p>
-          <h2>每天安排</h2>
+          <h2>单日行程</h2>
+        </div>
+
+        <div class="day-switcher" role="tablist" aria-label="选择日期">
+          <button type="button" class="day-tab active" data-day-tab="1" role="tab" aria-selected="true">5/26 抵达</button>
+          <button type="button" class="day-tab" data-day-tab="2" role="tab" aria-selected="false">5/27 艺术</button>
+          <button type="button" class="day-tab" data-day-tab="3" role="tab" aria-selected="false">5/28 法网</button>
+          <button type="button" class="day-tab" data-day-tab="4" role="tab" aria-selected="false">5/29 返程</button>
         </div>
 
         <div class="days">
-          <article class="day-card" id="day-1">
+          <article class="day-card active-page" id="day-1" data-day-page="1" role="tabpanel">
             <div class="day-date">
               <span>5月26日</span>
               <strong>抵达 + 塞纳河夜色</strong>
@@ -185,7 +192,7 @@
             <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Crazy%20Horse%20Paris&waypoints=Eiffel%20Tower%2C%20Paris&travelmode=transit" rel="noreferrer">打开当天路线</a>
           </article>
 
-          <article class="day-card" id="day-2">
+          <article class="day-card" id="day-2" data-day-page="2" role="tabpanel" hidden>
             <div class="day-date">
               <span>5月27日</span>
               <strong>圣母院 + 奥赛博物馆</strong>
@@ -210,7 +217,7 @@
             <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Les%20Antiquaires%2C%2013%20Rue%20du%20Bac%2C%2075007%20Paris&waypoints=Notre-Dame%20de%20Paris%7CMus%C3%A9e%20d%27Orsay&travelmode=transit" rel="noreferrer">打开当天路线</a>
           </article>
 
-          <article class="day-card" id="day-3">
+          <article class="day-card" id="day-3" data-day-page="3" role="tabpanel" hidden>
             <div class="day-date">
               <span>5月28日</span>
               <strong>Roland-Garros 法网日</strong>
@@ -235,7 +242,7 @@
             <a class="route" href="https://www.google.com/maps/dir/?api=1&origin=35%20Rue%20de%20la%20R%C3%A9publique%2C%2092800%20Puteaux%2C%20France&destination=Stade%20Roland-Garros&travelmode=transit" rel="noreferrer">打开当天路线</a>
           </article>
 
-          <article class="day-card" id="day-4">
+          <article class="day-card" id="day-4" data-day-page="4" role="tabpanel" hidden>
             <div class="day-date">
               <span>5月29日</span>
               <strong>卢浮宫 + 返程</strong>

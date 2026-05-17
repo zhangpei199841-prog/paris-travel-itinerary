@@ -89,7 +89,7 @@ a:hover {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 24px;
   max-width: 980px;
@@ -97,7 +97,8 @@ a:hover {
 }
 
 .hero-copy {
-  padding: 30px 0;
+  max-width: 760px;
+  padding: 8px 0 30px;
 }
 
 .eyebrow {
@@ -599,7 +600,8 @@ h3 {
 
 .flipbook-map {
   position: relative;
-  min-height: 500px;
+  width: 100%;
+  min-height: 520px;
   border: 3px solid var(--ink);
   border-radius: 8px;
   overflow: hidden;
@@ -1022,6 +1024,18 @@ h3 {
   }
 }
 
+@keyframes day-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .stamp {
   position: absolute;
   top: 18px;
@@ -1249,10 +1263,53 @@ h3 {
   gap: 20px;
 }
 
+.day-switcher {
+  position: sticky;
+  top: 74px;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 8px;
+  border: 2px solid rgba(36, 49, 63, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 24px rgba(36, 49, 63, 0.08);
+}
+
+.day-tab {
+  min-height: 42px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.day-tab.active {
+  border-color: var(--ink);
+  color: #fff;
+  background: var(--coral);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
 .day-card {
   position: relative;
   overflow: hidden;
   padding: 20px;
+}
+
+.day-card[hidden] {
+  display: none;
+}
+
+.day-card.active-page {
+  animation: day-enter 180ms ease-out;
 }
 
 .day-card::before {
