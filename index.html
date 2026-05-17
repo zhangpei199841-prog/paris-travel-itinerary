@@ -27,53 +27,55 @@
               <span>Branch Map</span>
               <strong>Paris trip atlas</strong>
             </div>
+            <button type="button" class="map-edit-toggle" aria-pressed="false">调整位置</button>
 
             <svg class="route-overlay" viewBox="0 0 1000 700" role="img" aria-labelledby="route-title route-desc">
               <title id="route-title">巴黎四日行程路线总览</title>
               <desc id="route-desc">四条路线叠加在巴黎底图上，显示 CDG、Puteaux 民宿、埃菲尔铁塔、疯马秀、巴黎圣母院、奥赛、法网、卢浮宫和返程机场。</desc>
-              <path class="route-line route-line-1" d="M850 106 C720 112 456 136 180 256 C300 318 392 330 470 334 C560 316 640 274 720 230" />
-              <path class="route-line route-line-2" d="M180 256 C348 300 548 336 742 390 C660 430 566 442 470 410" />
-              <path class="route-line route-line-3" d="M180 256 C170 390 208 508 296 586" />
-              <path class="route-line route-line-4" d="M180 256 C348 302 522 330 610 360 C720 292 814 178 850 106" />
+              <path class="route-line route-line-1" data-route="1" />
+              <path class="route-line route-line-2" data-route="2" />
+              <path class="route-line route-line-3" data-route="3" />
+              <path class="route-line route-line-4" data-route="4" />
 
-              <g class="day-badge badge-1" transform="translate(360 320)"><circle r="16" /><text y="6">1</text></g>
-              <g class="day-badge badge-2" transform="translate(590 420)"><circle r="16" /><text y="6">2</text></g>
-              <g class="day-badge badge-3" transform="translate(218 430)"><circle r="16" /><text y="6">3</text></g>
-              <g class="day-badge badge-4" transform="translate(706 286)"><circle r="16" /><text y="6">4</text></g>
+              <g class="day-badge badge-1" data-badge="1"><circle r="16" /><text y="6">1</text></g>
+              <g class="day-badge badge-2" data-badge="2"><circle r="16" /><text y="6">2</text></g>
+              <g class="day-badge badge-3" data-badge="3"><circle r="16" /><text y="6">3</text></g>
+              <g class="day-badge badge-4" data-badge="4"><circle r="16" /><text y="6">4</text></g>
             </svg>
 
-            <div class="photo-node node-cdg">
+            <div class="photo-node node-cdg" data-node="cdg">
               <span class="node-photo photo-cdg"></span>
               <strong>CDG</strong>
             </div>
-            <div class="photo-node node-home">
+            <div class="photo-node node-home" data-node="home">
               <span class="node-photo photo-home"></span>
               <strong>民宿</strong>
             </div>
-            <div class="photo-node node-eiffel">
+            <div class="photo-node node-eiffel" data-node="eiffel">
               <span class="node-photo photo-eiffel"></span>
               <strong>埃菲尔铁塔</strong>
             </div>
-            <div class="photo-node node-crazy">
+            <div class="photo-node node-crazy" data-node="crazy">
               <span class="node-photo photo-crazy"></span>
               <strong>疯马秀</strong>
             </div>
-            <div class="photo-node node-notre">
+            <div class="photo-node node-notre" data-node="notre">
               <span class="node-photo photo-notre"></span>
               <strong>圣母院</strong>
             </div>
-            <div class="photo-node node-orsay">
+            <div class="photo-node node-orsay" data-node="orsay">
               <span class="node-photo photo-orsay"></span>
               <strong>奥赛</strong>
             </div>
-            <div class="photo-node node-roland">
+            <div class="photo-node node-roland" data-node="roland">
               <span class="node-photo photo-roland"></span>
               <strong>法网</strong>
             </div>
-            <div class="photo-node node-louvre">
+            <div class="photo-node node-louvre" data-node="louvre">
               <span class="node-photo photo-louvre"></span>
               <strong>卢浮宫</strong>
             </div>
+            <p class="map-edit-hint">打开“调整位置”后可拖动地点卡片，关闭后会保存到本机浏览器。</p>
           </div>
         </section>
 
