@@ -31,56 +31,50 @@
             <svg class="route-overlay" viewBox="0 0 1000 560" role="img" aria-labelledby="route-title route-desc">
               <title id="route-title">巴黎四日行程路线总览</title>
               <desc id="route-desc">四条路线叠加在巴黎底图上，显示 CDG、Puteaux 民宿、埃菲尔铁塔、疯马秀、巴黎圣母院、奥赛、法网、卢浮宫和返程机场。</desc>
-              <path class="route-line route-line-1" d="M880 92 C720 120 512 120 178 198 C302 256 392 266 468 270 C510 260 560 238 612 212" />
-              <path class="route-line route-line-2" d="M178 198 C398 248 592 298 670 318 C612 334 538 342 478 336" />
-              <path class="route-line route-line-3" d="M178 198 C178 296 198 402 256 462" />
-              <path class="route-line route-line-4" d="M178 198 C350 246 512 286 576 304 C708 232 812 154 880 92" />
+              <path class="route-line route-line-1" d="M900 86 C748 112 420 136 150 218 C258 260 358 288 438 300 C492 298 536 274 570 242" />
+              <path class="route-line route-line-2" d="M150 218 C328 260 512 306 646 332 C596 346 552 348 506 338" />
+              <path class="route-line route-line-3" d="M150 218 C152 300 190 382 258 448" />
+              <path class="route-line route-line-4" d="M150 218 C322 258 486 296 586 318 C704 246 824 146 900 86" />
 
-              <g class="map-point point-cdg" transform="translate(880 92)">
+              <g class="map-point point-cdg" transform="translate(900 86)">
                 <circle r="13" /><text x="18" y="5">CDG</text>
               </g>
-              <g class="map-point point-base" transform="translate(178 198)">
+              <g class="map-point point-base" transform="translate(150 218)">
                 <circle r="15" /><text x="20" y="5">Puteaux</text>
               </g>
-              <g class="map-point point-eiffel" transform="translate(468 270)">
+              <g class="map-point point-eiffel" transform="translate(438 300)">
                 <circle r="13" /><text x="18" y="5">Eiffel</text>
               </g>
-              <g class="map-point point-crazy" transform="translate(612 212)">
+              <g class="map-point point-crazy" transform="translate(570 242)">
                 <circle r="13" /><text x="18" y="5">Crazy Horse</text>
               </g>
-              <g class="map-point point-notre" transform="translate(670 318)">
+              <g class="map-point point-notre" transform="translate(646 332)">
                 <circle r="13" /><text x="18" y="5">Notre-Dame</text>
               </g>
-              <g class="map-point point-orsay" transform="translate(478 336)">
+              <g class="map-point point-orsay" transform="translate(506 338)">
                 <circle r="13" /><text x="18" y="5">Orsay</text>
               </g>
-              <g class="map-point point-roland" transform="translate(256 462)">
+              <g class="map-point point-roland" transform="translate(258 448)">
                 <circle r="13" /><text x="18" y="5">Roland-Garros</text>
               </g>
-              <g class="map-point point-louvre" transform="translate(576 304)">
+              <g class="map-point point-louvre" transform="translate(586 318)">
                 <circle r="13" /><text x="18" y="5">Louvre</text>
               </g>
 
-              <g class="day-badge badge-1" transform="translate(370 245)"><circle r="17" /><text y="6">1</text></g>
-              <g class="day-badge badge-2" transform="translate(560 330)"><circle r="17" /><text y="6">2</text></g>
-              <g class="day-badge badge-3" transform="translate(218 352)"><circle r="17" /><text y="6">3</text></g>
-              <g class="day-badge badge-4" transform="translate(696 224)"><circle r="17" /><text y="6">4</text></g>
+              <g class="day-badge badge-1" transform="translate(342 286)"><circle r="17" /><text y="6">1</text></g>
+              <g class="day-badge badge-2" transform="translate(560 332)"><circle r="17" /><text y="6">2</text></g>
+              <g class="day-badge badge-3" transform="translate(206 350)"><circle r="17" /><text y="6">3</text></g>
+              <g class="day-badge badge-4" transform="translate(724 226)"><circle r="17" /><text y="6">4</text></g>
             </svg>
-
-            <div class="map-day-controls" aria-label="选择地图路线">
-              <button type="button" class="map-day-button active" data-map-day="1">1 抵达夜游</button>
-              <button type="button" class="map-day-button" data-map-day="2">2 左岸艺术</button>
-              <button type="button" class="map-day-button" data-map-day="3">3 法网</button>
-              <button type="button" class="map-day-button" data-map-day="4">4 卢浮宫返程</button>
-            </div>
-
-            <div class="flip-detail" aria-live="polite">
-              <span>当前分支</span>
-              <strong>5/26 夜游</strong>
-              <p>先把行李放回住处，再从铁塔河岸一路切到疯马秀。</p>
-            </div>
           </div>
         </section>
+
+        <div class="route-legend" aria-label="路线图例">
+          <span class="legend-day legend-day-1">1 CDG → 民宿 → 铁塔 → 疯马秀</span>
+          <span class="legend-day legend-day-2">2 民宿 → 圣母院 → 奥赛</span>
+          <span class="legend-day legend-day-3">3 民宿 → Roland-Garros</span>
+          <span class="legend-day legend-day-4">4 民宿 → 卢浮宫 → CDG</span>
+        </div>
 
         <section class="hero-copy" aria-labelledby="trip-title">
           <p class="eyebrow">Paris Pocket Trip</p>

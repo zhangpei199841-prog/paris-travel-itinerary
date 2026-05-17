@@ -633,15 +633,15 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(1.05) contrast(1.02);
+  filter: saturate(0.98) contrast(0.96) brightness(0.92);
 }
 
 .map-image-stage::after {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(16, 24, 39, 0.08), rgba(16, 24, 39, 0.26)),
-    radial-gradient(circle at 50% 50%, transparent 0 46%, rgba(16, 24, 39, 0.2) 100%);
+    linear-gradient(180deg, rgba(16, 24, 39, 0.08), rgba(16, 24, 39, 0.18)),
+    radial-gradient(circle at 50% 50%, rgba(255, 249, 239, 0.12) 0 42%, rgba(16, 24, 39, 0.16) 100%);
   content: "";
   pointer-events: none;
 }
@@ -714,26 +714,34 @@ h3 {
 
 .route-line {
   fill: none;
-  opacity: 0.28;
-  stroke: rgba(255, 255, 255, 0.72);
-  stroke-dasharray: 9 13;
+  opacity: 0.96;
+  stroke-dasharray: 12 10;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 7;
-  filter: drop-shadow(0 2px 5px rgba(16, 24, 39, 0.35));
+  stroke-width: 8;
+  filter:
+    drop-shadow(0 2px 0 rgba(36, 49, 63, 0.75))
+    drop-shadow(0 4px 9px rgba(16, 24, 39, 0.35));
 }
 
-.flipbook-map[data-active-day="1"] .route-line-1,
-.flipbook-map[data-active-day="2"] .route-line-2,
-.flipbook-map[data-active-day="3"] .route-line-3,
-.flipbook-map[data-active-day="4"] .route-line-4 {
-  opacity: 1;
+.route-line-1 {
+  stroke: #ff6f61;
+}
+
+.route-line-2 {
+  stroke: #3377c8;
+}
+
+.route-line-3 {
+  stroke: #34a66a;
+}
+
+.route-line-4 {
   stroke: #ffd76f;
-  animation: route-dash 1.4s linear infinite;
 }
 
 .map-point {
-  opacity: 0.74;
+  opacity: 1;
 }
 
 .map-point circle {
@@ -757,7 +765,7 @@ h3 {
 }
 
 .day-badge circle {
-  fill: #ff6f61;
+  fill: #24313f;
   stroke: #24313f;
   stroke-width: 4;
 }
@@ -769,33 +777,65 @@ h3 {
   text-anchor: middle;
 }
 
-.map-day-controls {
-  position: absolute;
-  right: 14px;
-  bottom: 96px;
-  left: 14px;
-  z-index: 6;
+.badge-1 circle {
+  fill: #ff6f61;
+}
+
+.badge-2 circle {
+  fill: #3377c8;
+}
+
+.badge-3 circle {
+  fill: #34a66a;
+}
+
+.badge-4 circle {
+  fill: #d79f18;
+}
+
+.route-legend {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
-.map-day-button {
-  min-height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.legend-day {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  padding: 9px 11px;
+  border: 2px solid rgba(36, 49, 63, 0.14);
   border-radius: 8px;
-  color: #f8fbff;
-  background: rgba(16, 24, 39, 0.64);
-  backdrop-filter: blur(12px);
-  font: inherit;
-  font-size: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  font-size: 13px;
   font-weight: 900;
-  cursor: pointer;
+  line-height: 1.25;
 }
 
-.map-day-button.active {
-  border-color: #ffd76f;
-  color: #24313f;
+.legend-day::before {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 auto;
+  margin-right: 8px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  content: "";
+}
+
+.legend-day-1::before {
+  background: #ff6f61;
+}
+
+.legend-day-2::before {
+  background: #3377c8;
+}
+
+.legend-day-3::before {
+  background: #34a66a;
+}
+
+.legend-day-4::before {
   background: #ffd76f;
 }
 
@@ -1590,6 +1630,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .route-legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-copy {
     padding-bottom: 8px;
   }
@@ -1631,6 +1675,10 @@ footer {
   .topbar a {
     min-height: 34px;
     font-size: 13px;
+  }
+
+  .route-legend {
+    grid-template-columns: 1fr;
   }
 
   h1 {
@@ -1716,17 +1764,6 @@ footer {
   .map-point text {
     font-size: 28px;
     stroke-width: 6;
-  }
-
-  .map-day-controls {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    bottom: 96px;
-  }
-
-  .flip-detail {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
   }
 
   .branch-map {
